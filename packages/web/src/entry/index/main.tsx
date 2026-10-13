@@ -86,8 +86,7 @@ function App({ selectedTodoId }: { selectedTodoId: string | null }) {
 
   return (
     <div className="mx-auto min-h-screen w-full max-w-2xl p-6">
-      <h1 className="mb-6 text-3xl font-bold">Kilonode demo application</h1>
-
+      <h1 className="mb-6 text-3xl font-bold">Kilonode demo Application</h1>
       <form className="mb-6 flex gap-2" onSubmit={onCreate}>
         <input
           className="w-full rounded border border-gray-300 px-3 py-2"
