@@ -2,7 +2,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { serve } from "@hono/node-server";
 import { inject, injectable } from "@needle-di/core";
-import { invariant } from "@the_application_name/common";
+import { invariant } from "@kilonode-demo-app/common";
 import { Hono } from "hono";
 import { TodosApi } from "../features/todos/TodosApi";
 import { honoJsErrorHandler } from "../lib/honoJsApiErrorHandler";

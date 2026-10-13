@@ -1,3 +1,3 @@
-import { createFetchClient, todosContract } from "@the_application_name/common";
+import { createFetchClient, todosContract } from "@kilonode-demo-app/common";
 
 export const todosApi = createFetchClient(todosContract, { baseUrl: "/api" });

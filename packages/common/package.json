@@ -1,5 +1,5 @@
 {
-  "name": "@the_application_name/common",
+  "name": "@kilonode-demo-app/common",
   "version": "1.0.0",
   "private": true,
   "type": "module",

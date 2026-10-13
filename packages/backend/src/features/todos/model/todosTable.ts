@@ -1,4 +1,4 @@
-import { Uuid } from "@the_application_name/common";
+import { Uuid } from "@kilonode-demo-app/common";
 import * as sql from "drizzle-orm/pg-core";
 
 export const todosTable = sql.pgTable("todos", {

@@ -5,11 +5,12 @@ import { sleep } from "./lib/sleep";
 import { HttpServer } from "./shared/HttpServer";
 import { Migrator } from "./shared/migrations/Migrator";
 import { OnDeinit } from "./shared/OnDeinit";
+import { OnInit } from "./shared/OnInit";
 
 const logger = Logger.for("main");
 const container = createContainer();
 
-process.title = "the_application_name";
+process.title = "kilonode-demo-app";
 
 try {
   await container.get(Migrator).up();
@@ -20,6 +21,9 @@ try {
 
 const httpServer = container.get(HttpServer);
 await httpServer.init();
+
+const toInit = container.get<OnInit>(OnInit, { multi: true });
+await Promise.all(toInit.map((it) => it.init()));
 
 function handleShutdown(signal: NodeJS.Signals) {
   logger.info("Shutdown signal retrieved", { signal });

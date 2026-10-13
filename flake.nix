@@ -94,7 +94,7 @@
                 exit 1
               fi
               tool=$(command -v podman || command -v docker)
-              $tool build . -t the_application_name:local -f ./docker/Dockerfile
+              $tool build . -t kilonode-demo-app:local -f ./docker/Dockerfile
             '')
           ];
         };

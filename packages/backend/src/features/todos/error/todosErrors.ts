@@ -1,4 +1,4 @@
-import { HttpStatusCodes, Uuid } from "@the_application_name/common";
+import { HttpStatusCodes, Uuid } from "@kilonode-demo-app/common";
 import { HttpError } from "@/lib/HttpErrorMetadata";
 
 @HttpError({ status: HttpStatusCodes.NOT_FOUND })

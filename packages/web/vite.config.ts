@@ -1,6 +1,6 @@
 import { resolve } from "node:path";
 import tailwindcss from "@tailwindcss/vite";
-import { pages } from "@the_application_name/common";
+import { pages } from "@kilonode-demo-app/common";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 

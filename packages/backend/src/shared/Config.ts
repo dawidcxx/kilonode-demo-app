@@ -1,5 +1,5 @@
 import { injectable } from "@needle-di/core";
-import { isNil } from "@the_application_name/common";
+import { isNil } from "@kilonode-demo-app/common";
 import { LOG_LEVELS, type LogLevel } from "@/lib/Logger";
 
 @injectable()
@@ -8,6 +8,14 @@ export class Config {
 
   public get ttlCacheSize(): number {
     return this.overridesMap.ttlCacheSize ?? 10000;
+  }
+
+  public get cronEnabled(): boolean {
+    if (!isNil(this.overridesMap.cronEnabled)) {
+      return this.overridesMap.cronEnabled;
+    }
+    const fromEnv = process.env["CRON_ENABLED"]?.toLowerCase();
+    return isNil(fromEnv) ? true : fromEnv !== "false";
   }
 
   public get logLevel(): LogLevel {

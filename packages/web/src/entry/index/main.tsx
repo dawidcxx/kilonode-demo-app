@@ -1,5 +1,5 @@
 import "@/global.css";
-import { uuidFromString, type Todo } from "@the_application_name/common";
+import { uuidFromString, type Todo } from "@kilonode-demo-app/common";
 import { useEffect, useState, StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { Route, Router, Switch, useLocation } from "wouter";

@@ -2,7 +2,7 @@ import { PGlite } from "@electric-sql/pglite";
 import { PGLiteSocketServer } from "@electric-sql/pglite-socket";
 import { pgcrypto } from "@electric-sql/pglite/contrib/pgcrypto";
 import type { Container } from "@needle-di/core";
-import { assertNotNull, isNil, randomIntRange } from "@the_application_name/common";
+import { assertNotNull, isNil, randomIntRange } from "@kilonode-demo-app/common";
 import postgres from "postgres";
 import { createContainer } from "../../container";
 import { DB_SQL } from "../../shared/Db";

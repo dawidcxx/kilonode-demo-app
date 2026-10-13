@@ -1,5 +1,5 @@
 {
-  "name": "@the_application_name/web",
+  "name": "@kilonode-demo-app/web",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.2",
-    "@the_application_name/common": "workspace:*",
+    "@kilonode-demo-app/common": "workspace:*",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "swr": "^2.4.1",

@@ -1,13 +1,13 @@
-name: the_application_name
+name: kilonode-demo-app
 services:
   db:
     image: postgres:17-alpine
     environment:
-      POSTGRES_USER: the_application_name
-      POSTGRES_PASSWORD: the_application_name
-      POSTGRES_DB: the_application_name
+      POSTGRES_USER: kilonode-demo-app
+      POSTGRES_PASSWORD: kilonode-demo-app
+      POSTGRES_DB: kilonode-demo-app
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U the_application_name -d the_application_name"]
+      test: ["CMD-SHELL", "pg_isready -U kilonode-demo-app -d kilonode-demo-app"]
       interval: 2s
       timeout: 5s
       retries: 5
@@ -27,11 +27,11 @@ services:
       - db
 
   app:
-    image: the_application_name:local
+    image: kilonode-demo-app:local
     profiles:
       - full
     environment:
-      DATABASE_URL: postgresql://the_application_name:the_application_name@db:5432/the_application_name
+      DATABASE_URL: postgresql://kilonode-demo-app:kilonode-demo-app@db:5432/kilonode-demo-app
       PORT: 8080
       HOST: 0.0.0.0
     ports:

@@ -1,5 +1,5 @@
 import { inject, injectable } from "@needle-di/core";
-import { assertNotNull, CreateTodoRequest, Todo, TodoParams } from "@the_application_name/common";
+import { assertNotNull, CreateTodoRequest, Todo, TodoParams } from "@kilonode-demo-app/common";
 import { eq, sql } from "drizzle-orm";
 import { DB, type DrizzleDb } from "../../shared/Db";
 import { TodoNotFoundError } from "./error/todosErrors";
@@ -21,6 +21,11 @@ export class TodosService {
       .returning();
     assertNotNull(inserted, "inserted");
     return mapTodo(inserted);
+  }
+
+  async deleteAll(): Promise<number> {
+    const deleted = await this.db.delete(todosTable).returning({ id: todosTable.id });
+    return deleted.length;
   }
 
   async update({ id }: TodoParams): Promise<Todo> {

@@ -2,6 +2,8 @@ import { Container } from "@needle-di/core";
 import { drizzle } from "drizzle-orm/postgres-js";
 import postgres from "postgres";
 import { TodosApi } from "./features/todos/TodosApi";
+import { TodosCleanupCron } from "./features/todos/TodosCleanupCron";
+import { CronService } from "./lib/CronService";
 import { Cache } from "./shared/Cache";
 import { Config } from "./shared/Config";
 import { DB, DB_SQL, type Sql } from "./shared/Db";
@@ -35,9 +37,16 @@ export function createContainer(): Container {
     },
   });
   container.bind(HttpServer);
+  container.bind({
+    provide: CronService,
+    useFactory(container) {
+      return new CronService({ isEnabled: container.get(Config).cronEnabled });
+    },
+  });
 
   // Todos feature
   container.bind(TodosApi);
+  container.bind(TodosCleanupCron);
 
   // Initables
   container.bind({
@@ -49,12 +58,22 @@ export function createContainer(): Container {
       }
     },
   });
+  container.bind({
+    multi: true,
+    provide: OnInit,
+    useExisting: TodosCleanupCron,
+  });
 
   // De-initables
   container.bind({
     multi: true,
     provide: OnDeinit,
     useExisting: HttpServer,
+  });
+  container.bind({
+    multi: true,
+    provide: OnDeinit,
+    useExisting: TodosCleanupCron,
   });
 
   return container;

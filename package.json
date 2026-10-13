@@ -1,5 +1,5 @@
 {
-  "name": "the_application_name",
+  "name": "kilonode-demo-app",
   "version": "1.0.0",
   "private": true,
   "workspaces": [
@@ -8,12 +8,12 @@
   "scripts": {
     "dev": "bun run build:common && bun run dev:backend & bun run dev:web & bun run dev:common",
     "typecheck": "bun --filter '*' typecheck",
-    "dev:backend": "bun --filter @the_application_name/backend dev",
-    "dev:web": "bun --filter @the_application_name/web dev",
-    "dev:common": "bun --filter @the_application_name/common dev",
-    "build:backend": "bun --filter @the_application_name/backend build",
-    "build:web": "bun --filter @the_application_name/web build",
-    "build:common": "bun --filter @the_application_name/common build",
+    "dev:backend": "bun --filter @kilonode-demo-app/backend dev",
+    "dev:web": "bun --filter @kilonode-demo-app/web dev",
+    "dev:common": "bun --filter @kilonode-demo-app/common dev",
+    "build:backend": "bun --filter @kilonode-demo-app/backend build",
+    "build:web": "bun --filter @kilonode-demo-app/web build",
+    "build:common": "bun --filter @kilonode-demo-app/common build",
     "test": "bun --filter '*' test"
   }
 }

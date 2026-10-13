@@ -5,7 +5,7 @@ import {
   TodoListResponse,
   TodoParams,
   todosContract,
-} from "@the_application_name/common";
+} from "@kilonode-demo-app/common";
 import { Hono } from "hono";
 import * as v from "valibot";
 import { TodosService } from "./TodosService";

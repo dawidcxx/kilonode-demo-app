@@ -3,7 +3,7 @@ import { stdin as input, stdout as output } from "process";
 import readline from "readline/promises";
 
 const IGNORE = new Set(["node_modules", ".git", ".direnv"]);
-const PLACEHOLDER = "the_application_name";
+const PLACEHOLDER = "kilonode-demo-app";
 
 const argProjectName = process.argv[2]?.trim();
 const rl = readline.createInterface({ input, output });

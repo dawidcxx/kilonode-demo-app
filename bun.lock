@@ -3,16 +3,16 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "the_application_name",
+      "name": "kilonode-demo-app",
     },
     "packages/backend": {
-      "name": "@the_application_name/backend",
+      "name": "@kilonode-demo-app/backend",
       "dependencies": {
         "@electric-sql/pglite": "^0.4.1",
         "@electric-sql/pglite-socket": "^0.1.1",
         "@hono/node-server": "^2.1.5",
         "@needle-di/core": "^1.1.0",
-        "@the_application_name/common": "workspace:*",
+        "@kilonode-demo-app/common": "workspace:*",
         "date-fns": "^4.1.0",
         "drizzle-orm": "^0.45.1",
         "hono": "^4.13.13",
@@ -26,7 +26,7 @@
       },
     },
     "packages/common": {
-      "name": "@the_application_name/common",
+      "name": "@kilonode-demo-app/common",
       "version": "1.0.0",
       "dependencies": {
         "valibot": "^1.2.0",
@@ -37,11 +37,11 @@
       },
     },
     "packages/web": {
-      "name": "@the_application_name/web",
+      "name": "@kilonode-demo-app/web",
       "version": "0.0.0",
       "dependencies": {
         "@tailwindcss/vite": "^4.2.2",
-        "@the_application_name/common": "workspace:*",
+        "@kilonode-demo-app/common": "workspace:*",
         "react": "^19.2.4",
         "react-dom": "^19.2.4",
         "swr": "^2.4.1",
@@ -156,11 +156,11 @@
 
     "@testing-library/react": ["@testing-library/react@16.3.3", "", { "dependencies": { "@babel/runtime": "^7.12.5" }, "peerDependencies": { "@testing-library/dom": "^10.0.0", "@types/react": "^18.0.0 || ^19.0.0", "@types/react-dom": "^18.0.0 || ^19.0.0", "react": "^18.0.0 || ^19.0.0", "react-dom": "^18.0.0 || ^19.0.0" }, "optionalPeers": ["@types/react", "@types/react-dom"] }, "sha512-Uo193NgQbPMz6lrrhtRQQFcMC6Re/ELLFbbuVL30WDlZxlpZf9/lMHTAVxPRLw1q1iu9OJmR1c2BLiENRstdBg=="],
 
-    "@the_application_name/backend": ["@the_application_name/backend@workspace:packages/backend"],
+    "@kilonode-demo-app/backend": ["@kilonode-demo-app/backend@workspace:packages/backend"],
 
-    "@the_application_name/common": ["@the_application_name/common@workspace:packages/common"],
+    "@kilonode-demo-app/common": ["@kilonode-demo-app/common@workspace:packages/common"],
 
-    "@the_application_name/web": ["@the_application_name/web@workspace:packages/web"],
+    "@kilonode-demo-app/web": ["@kilonode-demo-app/web@workspace:packages/web"],
 
     "@types/aria-query": ["@types/aria-query@5.0.4", "", {}, "sha512-rfT93uj5s0PRL7EzccGMs3brplhcrghnDoV26NqKhCAS1hVo+WdNsPvE/yb6ilfr5hi2MEk6d5EWJTKdxg8jVw=="],
 

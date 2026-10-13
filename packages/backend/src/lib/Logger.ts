@@ -1,4 +1,4 @@
-import { assertNever } from "@the_application_name/common";
+import { assertNever } from "@kilonode-demo-app/common";
 
 let LOG_LEVEL: number = 0;
 

@@ -1,4 +1,4 @@
-import { HttpStatusCodes, type HttpStatusCode } from "@the_application_name/common";
+import { HttpStatusCodes, type HttpStatusCode } from "@kilonode-demo-app/common";
 import type { Context } from "hono";
 import type { HTTPResponseError } from "hono/types";
 import { serializeError } from "serialize-error";
